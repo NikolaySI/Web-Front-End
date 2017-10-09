@@ -1,10 +1,14 @@
 # Web-Front-End
 
-## Screenshots
+# Blog SPA application
 
-<img src="https://github.com/Team-Pisco-Sour/Jumper/blob/master/Jumper/img/start.png?raw=true" width="240"/>
-<img src="https://github.com/Team-Pisco-Sour/Jumper/blob/master/Jumper/img/play.png?raw=true" width="240"/>
-<img src="https://github.com/Team-Pisco-Sour/Jumper/blob/master/Jumper/img/death.png?raw=true" width="240"/>
+#Blog System allows users to:
+
+#Present links to other blogs and web pages
+
+#Leave comments
+
+#See the newest post and etc.
 
 ## Author
 | Name | [Student system](https://telerikacademy.com) username | [Github](https://github.com) username|
