@@ -1,0 +1,64 @@
+<%- partial('./partials/navbar.ejs') %>
+<div id="content">
+  <div id="content-shadow">
+    <div class="container">
+      <div id="breadcrumbs">
+        <a href="/">Home</a>
+        <span class="raquo">»</span>
+          Blog Feed
+      </div><!-- end #breadcrumbs -->
+      <div id="content-area" class="clearfix">
+        <div id="left-area">
+          <div class="entry post clearfix">
+            <div id="et_pt_blog">
+              <% posts.forEach(function(post) { %>
+                <div class="et_pt_blogentry clearfix">
+                  <h2 class="et_pt_title">
+                    <a href="/post/<%= post.uri %>">
+                      <%= post.title %>
+                    </a>
+                  </h2>
+                  <p class="et_pt_blogmeta">
+                    Posted by
+                    <a href="/user/<%= post.author.username %>" title="Posts by <%= post.author.public %>" rel="<%= post.author.public %>">
+                      <%= post.author.public %>
+                    </a>
+                    on <%= post.createdAt %> in
+                    <a href="/user/<%= post.category %>" rel="category tag">
+                      Blog
+                    </a>
+                    |
+                    <a href="/post/<%= post.uri %>#comments">
+                      <%= post.comments.length %> <%- post.comments.length===1? 'comment':'comments' %>
+                    </a>
+                  </p>
+                  <div class="et_pt_thumb alignleft">
+                    <img src="<%= post.image %>" alt="<%= post.title %>" width="184" height="184">
+                      <a href="/post/<%= post.uri %>">
+                        <span class="overlay"></span>
+                      </a>
+                  </div> <!-- end .thumb -->
+                  <p>
+                    <%= post.content %>
+                  </p>
+                  <a href="/post/<%= post.uri %>" class="readmore">
+                    <span>
+                      read more
+                    </span>
+                  </a>
+                  <% if(req.session.me && req.session.me.id === post.author.id) { %>
+                  <a href="/edit-post/<%= post.id %>" class="small-button smallgreen">Edit</a>
+                  <% } %>
+                </div> <!-- end .et_pt_blogentry -->
+              <% }) %>
+              <div class="page-nav clearfix">
+              </div> <!-- end .entry -->
+            </div> <!-- end #et_pt_blog -->
+          </div> <!-- end .entry -->
+        </div> 	<!-- end #left-area -->
+        <%- partial('./partials/sidebar.ejs') %>
+      </div> <!-- end #content-area -->
+    </div>
+  </div> <!-- end #content-shadow -->
+</div> <!-- end #content -->
+<%- partial('./partials/footer.ejs') %>

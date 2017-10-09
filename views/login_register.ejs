@@ -1,0 +1,76 @@
+<%- partial('./partials/navbar.ejs') %>
+<div id="content">
+  <div id="content-shadow">
+    <div class="container">
+      <div id="breadcrumbs">
+        <a href="/">Home</a>
+        <span class="raquo">»</span>
+          Member authentication
+      </div>
+      <div id="content-area" class="clearfix">
+  		  <div id="">
+  				<div class="entry post clearfix">
+  					<div id="et-login">
+    					<div class="et-protected">
+    						<div class="et-protected-form">
+    							<form action="/user/login" method="post">
+    								<p>
+                      <span>Username: </span>
+                      <label>
+                        <input type="text" name="log" id="log" value="" size="20">
+                        <span class="et_protected_icon"></span>
+                      </label>
+                    </p>
+    								<p>
+                      <span>Password: </span>
+                      <label>
+                        <input type="password" name="pwd" id="pwd" size="20">
+                        <span class="et_protected_icon et_protected_password"></span>
+                      </label>
+                    </p>
+    								<input type="submit" name="submit" value="Login" class="etlogin-button">
+    							</form>
+    						</div> <!-- .et-protected-form -->
+    					</div> <!-- .et-protected -->
+    				</div> <!-- end #et-login -->
+  				  <div class="clear"></div>
+  				</div> <!-- end .entry -->
+          <div class="entry post clearfix">
+  					<div id="et-register">
+    					<div class="et-protected">
+    						<div class="et-protected-form">
+    							<form action="/user/register" method="post">
+    								<p>
+                      <span>Username: </span>
+                      <label>
+                        <input type="text" name="log" id="log" value="" size="20">
+                        <span class="et_protected_icon"></span>
+                      </label>
+                    </p>
+    								<p>
+                      <span>Password: </span>
+                      <label>
+                        <input type="password" name="pwd" id="pwd" size="20">
+                        <span class="et_protected_icon et_protected_password"></span>
+                      </label>
+                    </p>
+                    <p>
+                      <span>Email: </span>
+                      <label>
+                        <input type="text" name="email" id="log" value="" size="20">
+                        <span class="et_protected_icon"></span>
+                      </label>
+                    </p>
+    								<input type="submit" name="submit" value="Register" class="etlogin-button">
+    							</form>
+    						</div> <!-- .et-protected-form -->
+    					</div> <!-- .et-protected -->
+    				</div> <!-- end #et-login -->
+  				  <div class="clear"></div>
+  				</div> <!-- end .entry -->
+  			</div>
+      </div>
+    </div> <!-- end .container -->
+  </div> <!-- end #content-shadow -->
+</div> <!-- end #content -->
+<%- partial('./partials/footer.ejs') %>

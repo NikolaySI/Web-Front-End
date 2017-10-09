@@ -1,0 +1,57 @@
+<%- partial('./partials/navbar.ejs') %>
+<div id="content">
+  <div id="content-shadow">
+    <div class="container">
+	<div id="breadcrumbs">
+					<a href="/">Home</a> <span class="raquo">»</span>
+
+									Contact Us					</div> <!-- end #breadcrumbs -->	<div id="content-area" class="clearfix">
+		<div id="left-area">
+					<div class="entry post clearfix">
+
+
+				<div id="et-contact">
+
+					<div id="et-contact-message"> </div>
+
+											<form action="/do_contact" method="post" id="et_contact_form">
+							<div id="et_contact_left">
+								<p class="clearfix">
+									<label for="et_contact_name" class="et_contact_form_label">Name</label>
+									<input type="text" name="et_contact_name" value="Name" id="et_contact_name" class="input">
+								</p>
+
+								<p class="clearfix">
+									<label for="et_contact_email" class="et_contact_form_label">Email Address</label>
+									<input type="text" name="et_contact_email" value="Email Address" id="et_contact_email" class="input">
+								</p>
+
+								<p class="clearfix">
+									<label for="et_contact_subject" class="et_contact_form_label">Subject</label>
+									<input type="text" name="et_contact_subject" value="Subject" id="et_contact_subject" class="input">
+								</p>
+							</div> <!-- #et_contact_left -->
+
+
+
+							<div class="clear"></div>
+
+							<p class="clearfix">
+								<label for="et_contact_message" class="et_contact_form_label">Message</label>
+								<textarea class="input" id="et_contact_message" name="et_contact_message">Message</textarea>
+							</p>
+							<input class="et_contact_submit" type="submit" value="Submit" id="et_contact_submit">
+
+            </form>
+									</div> <!-- end #et-contact -->
+
+				<div class="clear"></div>
+
+							</div> <!-- end .entry -->
+				</div> 	<!-- end #left-area -->
+
+		</div> <!-- end #content-area -->
+</div>
+  </div> <!-- end #content-shadow -->
+</div> <!-- end #content -->
+<%- partial('./partials/footer.ejs') %>

@@ -1,0 +1,61 @@
+<div id="top">
+  <div id="top-wrapper">
+    <div id="top-content">
+      <div id="bottom-light">
+        <div class="container">
+          <a href="/">
+            <img src="/images/logo.png" alt="Envisioned Theme" id="logo"/>
+          </a>
+          <div id="menu" class="clearfix">
+            <div id="menu-right">
+              <div id="menu-content">
+                <ul id="top-menu" class="nav">
+                  <li class="<%- (req.path == '/') ? 'current_page_item' : '' %>">
+                    <a href="/">Index</a>
+                  </li>
+                  <li class="<%- (req.path == '/contact-us') ? 'current_page_item' : '' %>">
+                    <a href="/contact-us">Contact us</a>
+                  </li>
+                  <% if(req.session.me) { %>
+                  <li class="<%- (req.path == '/new-post') ? 'current_page_item' : '' %>">
+                    <a href='/new-post' target=''>
+                      New Post
+                    </a>
+                  </li>
+                  <li class="<%- (req.path == '/profile') ? 'current_page_item' : '' %>">
+                    <a href='/profile' target=''>
+                      My profile
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href='/user/logout' target=''>
+                      Log out
+                    </a>
+                  </li>
+                  <% }else{ %>
+                  <li class="<%- (req.path == '/auth') ? 'current_page_item' : '' %>">
+                    <a href='/auth' target=''>
+                      Sign in
+                    </a>
+                  </li>
+                  <% } %>
+                </ul>
+                <div id="social-icons">
+                  <a href='#' target='_blank'>
+                    <img alt='Twitter' src='/images/twitter.png' />
+                  </a>
+                  <a href='#' target='_blank'>
+                    <img alt='Rss' src='/images/rss.png' />
+                  </a>
+                  <a href='#' target='_blank'>
+                    <img alt='Facebook' src='/images/facebook.png' />
+                  </a>
+                </div> <!-- end #social-icons -->
+              </div> <!-- end #menu-content -->
+            </div> <!-- end #menu-right -->
+          </div> <!-- end #menu -->
+        </div> <!-- end .container -->
+      </div> <!-- end #bottom-light -->
+    </div> <!-- end #top-content -->
+  </div> <!-- end #top-wrapper -->
+</div> <!-- end #top -->

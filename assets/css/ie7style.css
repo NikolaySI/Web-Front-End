@@ -1,0 +1,6 @@
+a { cursor: pointer; }
+#footer-bottom .container { padding: 26px 0 16px; }
+#footer-bottom { padding: 0; }
+
+#top { z-index: 2; }
+#content { z-index: 1; }

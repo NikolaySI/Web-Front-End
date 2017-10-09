@@ -1,0 +1,50 @@
+<%- partial('./partials/navbar.ejs') %>
+<div id="content">
+  <div id="content-shadow">
+    <div class="container">
+      <div class="entry post clearfix">
+
+
+    <div id="et-contact">
+
+      <div id="et-contact-message"> </div>
+
+                  <form action="/do-edit-post/<%= post.id %>" method="post" id="">
+          <div id="et_contact_left">
+            <p class="clearfix">
+              <label for="et_contact_name" class="et_contact_form_label">Title</label>
+              <input type="text" name="title" value="<%= post.title %>" id="et_contact_name" class="input">
+            </p>
+            <p class="clearfix">
+              <label for="et_contact_name" class="et_contact_form_label">Image url</label>
+              <input type="text" name="image" value="<%= post.image %>" id="et_contact_name" class="input">
+            </p>
+            <p class="clearfix">
+              <label for="et_contact_name" class="et_contact_form_label">Slug</label>
+              <input type="text" name="uri" value="<%= post.uri %>" id="et_contact_name" class="input">
+            </p>
+            <p class="clearfix">
+              <label for="et_contact_name" class="et_contact_form_label">Category</label>
+              <input type="text" name="category" value="<%= post.category %>" id="et_contact_name" class="input">
+            </p>
+          </div> <!-- #et_contact_left -->
+
+
+
+          <div class="clear"></div>
+
+          <p class="clearfix">
+            <label for="et_contact_message" class="et_contact_form_label">Content</label>
+            <textarea class="input" id="et_contact_message" name="content"><%= post.content %></textarea>
+          </p>
+          <input class="et_contact_submit" type="submit" value="Submit" id="et_contact_submit">
+        </form>
+              </div> <!-- end #et-contact -->
+
+    <div class="clear"></div>
+
+          </div> <!-- end .entry -->
+    </div>
+  </div> <!-- end #content-shadow -->
+</div> <!-- end #content -->
+<%- partial('./partials/footer.ejs') %>

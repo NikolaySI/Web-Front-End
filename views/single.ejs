@@ -1,0 +1,108 @@
+<%- partial('./partials/navbar.ejs') %>
+<div id="content">
+  <div id="content-shadow">
+    <div class="container">
+      <div id="breadcrumbs">
+        <a href="/">Home</a>
+        <span class="raquo">»</span>
+        <a href="/category/<%= post.category %>"><%= post.category %></a>
+        <span class="raquo">»</span>
+          <%= post.title %>
+      </div><!-- end #breadcrumbs -->
+      <div id="content-area" class="clearfix">
+        <div id="left-area">
+					<div class="entry post clearfix">
+				    <p class="meta-info">
+		          Posted  by
+              <a href="/user/<%= post.author.username %>" title="Posts by <%= post.author.public %>" rel="author">
+                <%= post.author.public %>
+              </a>
+              on <%= post.author.createdAt %> in
+              <a href="/category/<%= post.category %>" rel="category tag">
+                <%= post.category %>
+              </a>
+              |
+              <a href="/post/<%= post.uri %>#comments">
+                <%= post.comments.length %> <%- post.comments.length===1? 'comment':'comments' %>
+              </a>
+            </p>
+            <div class="post-thumbnail">
+							<img src="<%= post.image %>" class="post-thumb" alt="<%= post.title %>" width="213" height="213">
+              <span class="post-overlay"></span>
+						</div> 	<!-- end .post-thumbnail -->
+            <p>
+              <%= post.content %>
+            </p>
+            <% if(req.session.me && req.session.me.id === post.author.id) { %>
+            <a href="/edit-post/<%= post.id %>" class="small-button smallgreen">Edit</a>
+            <% } %>
+					</div> <!-- end .entry -->
+			    <!-- You can start editing here. -->
+          <div id="comment-wrap">
+		        <h3 id="comments"><%= post.comments.length %> <%- post.comments.length===1? 'comment':'comments' %></h3>
+					    <ol class="commentlist clearfix">
+                <% post.comments.forEach(function(comment) { %>
+				        <li class="comment even thread-even depth-1" id="comment-<%= comment.id %>">
+	                <div id="comment-470" class="comment-body clearfix">
+			              <div class="avatar-container">
+				              <div class="avatar-box">
+					              <img alt="" src="<%= comment.author.image %>" srcset="" class="avatar avatar-56 photo" height="56" width="56">
+                        <span class="avatar-overlay"></span>
+				              </div> <!-- end .avatar-box -->
+
+			              </div> <!-- end .avatar-container -->
+			              <div class="comment-top">
+              				<div class="comment-bottom">
+              					<div class="comment-container">
+              						<div class="comment-wrap clearfix">
+              							<div class="comment-meta commentmetadata">
+                              <span class="fn">
+                                <a href="/user/<%= comment.author.username %>" rel="external nofollow" class="url">
+                                  <%= comment.author.username %>
+                                </a>
+                              </span>
+                              says:
+                            </div>
+                            <div class="comment-content">
+                              <p><%= comment.content %></p>
+                              <p><span class="comment-date"><%= comment.createdAt %></span></p>
+                            </div> <!-- end comment-content-->
+							              <div class="reply-container">
+                              <a rel="nofollow" class="comment-reply-link" href="/comment-delete/<%= post.id %>/<%= comment.id %>" >
+                                Delete
+                              </a>
+                            </div>
+                          </div> <!-- end .comment-wrap-->
+              					</div> <!-- end .comment-container-->
+              				</div> <!-- end .comment-bottom-->
+              			</div> <!-- end .comment-top-->
+			              <div class="comment-arrow"></div>
+		              </div> <!-- end .comment-body-->
+                </li><!-- #comment-## -->
+                <% }) %>
+
+            </ol>
+					  <div id="respond" class="comment-respond">
+		          <h3 id="reply-title" class="comment-reply-title">
+                <span>Leave a Comment</span>
+              </h3>
+              <form action="/comment-post/<%=  post.id %>" method="post" id="commentform" class="comment-form">
+  				      <p class="comment-form-comment">
+                  <label for="comment">
+                    Comment
+                  </label>
+                  <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea>
+                </p>
+                <p class="form-submit">
+                  <input name="submit" type="submit" id="submit" class="submit" value="submit">
+                </p>
+              </form>
+  		      </div><!-- #respond -->
+          </div>
+        </div><!-- end #left-area -->
+        <%- partial('./partials/sidebar.ejs') %>
+      </div> <!-- end #content-area -->
+    </div>
+  </div> <!-- end #content-shadow -->
+</div> <!-- end #content -->
+<%- partial('./partials/footer.ejs') %>

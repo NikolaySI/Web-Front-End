@@ -1,0 +1,43 @@
+<%- partial('./partials/navbar.ejs') %>
+<div id="content">
+  <div id="content-shadow">
+    <div class="container">
+      <div class="one_fourth">
+        <div class="et-box et-shadow">
+					<div class="et-box-content" style="padding:15px;">
+					  <img alt="" src="<%= user.image %>" srcset="" style="width:100%" class="avatar photo" >
+					</div>
+        </div>
+			</div>
+      <div class="three_fourth et_column_last">
+				<h1 style="font-size: 20px; padding-top: 30px;"><%= user.public %></h1>
+        <form action="/update-profile" method="post" id="et_contact_form">
+          <div id="et_contact_left">
+            <p class="clearfix">
+              <label for="et_contact_name" class="et_contact_form_label">Public name</label>
+              <input type="text" name="public" value="<%= user.public %>" class="input">
+            </p>
+
+            <p class="clearfix">
+              <label for="et_contact_email" class="et_contact_form_label">Email Address</label>
+              <input type="text" name="email" value="<%= user.email %>" class="input">
+            </p>
+
+            <p class="clearfix">
+              <label for="et_contact_subject" class="et_contact_form_label">Password</label>
+              <input type="password" name="pwd" value="" class="input">
+            </p>
+            <p class="clearfix">
+              <label for="et_contact_subject" class="et_contact_form_label">Url to image</label>
+              <input type="text" name="image" value="<%= user.image %>" class="input">
+            </p>
+          </div> <!-- #et_contact_left -->
+          <div class="clear"></div>
+          <input class="et_contact_submit" type="submit" value="Save">
+          </form>
+			</div>
+      <div class="clear"></div>
+    </div>
+  </div> <!-- end #content-shadow -->
+</div> <!-- end #content -->
+<%- partial('./partials/footer.ejs') %>
