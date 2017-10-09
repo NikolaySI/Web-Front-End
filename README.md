@@ -19,5 +19,5 @@
 [Play the game](https://rawgit.com/Team-Pisco-Sour/Jumper/master/Jumper/index.html#)
 
 ## YouTube Video
-[YouTube](https://www.youtube.com/watch?v=152uy9mXchU)
+[YouTube](https://youtu.be/8xbqCDsYhrk)
 
