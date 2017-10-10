@@ -16,7 +16,7 @@
 | Nikolay Ivanov | Nikolai_Sashev | NikolaySI | 
 
 ## Live demo
-[Play the game](https://rawgit.com/Team-Pisco-Sour/Jumper/master/Jumper/index.html#)
+[Play the game](https://cdn.rawgit.com/NikolaySI/Web-Front-End/41aabc55/views/index.ejs)
 
 ## YouTube Video
 [YouTube](https://youtu.be/8xbqCDsYhrk)
